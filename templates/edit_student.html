@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Edit Student - ID: {{ student.StudentID }}</h2>
+
+    <form method="POST" action="">
+        <!-- First Name -->
+        <label>First Name:</label>
+        <input type="text" name="FirstName" value="{{ student.FirstName }}" required>
+
+        <!-- Last Name -->
+        <label>Last Name:</label>
+        <input type="text" name="LastName" value="{{ student.LastName }}" required>
+
+        <!-- Date of Birth -->
+        <label>Date of Birth:</label>
+        <input type="date" name="DOB" value="{{ student.DOB }}" required>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="Email" value="{{ student.Email }}" required>
+
+        <!-- Phone -->
+        <label>Phone:</label>
+        <input type="text" name="Phone" value="{{ student.Phone }}" required>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <select name="Gender" required>
+            <option value="Male" {% if student.Gender == 'Male' %}selected{% endif %}>Male</option>
+            <option value="Female" {% if student.Gender == 'Female' %}selected{% endif %}>Female</option>
+            <option value="Other" {% if student.Gender == 'Other' %}selected{% endif %}>Other</option>
+        </select>
+
+        <!-- Address -->
+        <label>Address:</label>
+        <textarea name="Address" rows="3" required>{{ student.Address }}</textarea>
+
+        <!-- Submit -->
+        <button type="submit">Update</button>
+    </form>
+
+    <!-- Back -->
+    <a href="/students">← Back to Student List</a>
+
+</body>
+</html>

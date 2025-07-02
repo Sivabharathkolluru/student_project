@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Grade</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2 class="mb-4">Edit Grade for {{ grade.StudentName }}</h2>
+
+    <!-- Grade Edit Form -->
+    <form method="POST">
+        <div class="form-group">
+            <label for="Subject">Subject</label>
+            <input type="text" class="form-control" id="Subject" name="Subject" value="{{ grade.Subject }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Score">Score</label>
+            <input type="number" step="0.01" class="form-control" id="Score" name="Score" value="{{ grade.Score }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Grade">Grade</label>
+            <input type="text" class="form-control" id="Grade" name="Grade" value="{{ grade.Grade }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ExamDate">Exam Date</label>
+            <input type="date" class="form-control" id="ExamDate" name="ExamDate" value="{{ grade.ExamDate }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Grade</button>
+        <a href="/grades/{{ grade.StudentID }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>

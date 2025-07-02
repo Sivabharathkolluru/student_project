@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="POST">
+        <label>First Name:</label><br>
+        <input type="text" name="FirstName" required><br><br>
+
+        <label>Last Name:</label><br>
+        <input type="text" name="LastName" required><br><br>
+
+        <label>DOB (YYYY-MM-DD):</label><br>
+        <input type="date" name="DOB" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="Email" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="text" name="Phone"><br><br>
+
+        <label>Gender:</label><br>
+        <select name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label>Address:</label><br>
+        <textarea name="Address"></textarea><br><br>
+
+        <input type="submit" value="Add Student">
+    </form>
+    <br>
+    <a href="/students">Back to List</a>
+</body>
+</html>
